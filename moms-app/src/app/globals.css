@@ -1,38 +1,10 @@
 @tailwind base;
   @tailwind components;
   @tailwind utilities;
-  
-/* Base styles for the course card container */
-.course-list {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 1rem;
-  justify-content: space-between;
-  padding: 1rem;
+
+/* Hide scrollbar */
+.scrollbar-hide {
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
 }
 
-/* Styles for individual cards */
-.course-card {
-  flex: 1 1 calc(33.333% - 1rem); /* 3 cards per row, with gap adjustment */
-  box-sizing: border-box;
-  min-width: 280px;
-  max-width: 100%;
-  background-color: black;
-  border: 1px solid gray;
-  border-radius: 0.5rem;
-  overflow: hidden;
-}
-
-/* Adjusting for tablets */
-@media (max-width: 768px) {
-  .course-card {
-    flex: 1 1 calc(50% - 1rem); /* 2 cards per row */
-  }
-}
-
-/* Adjusting for mobile phones */
-@media (max-width: 480px) {
-  .course-card {
-    flex: 1 1 100%; /* 1 card per row */
-  }
-}

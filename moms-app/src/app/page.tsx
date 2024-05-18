@@ -1,13 +1,16 @@
-import { Navbar } from "@/components/navbar";
-import Image from "next/image";
 import { Montserrat } from "next/font/google";
-import { Button } from "@/components/button";
 import { MaxWidthWrapper } from "@/components/MaxWidthWrapper";
-import { Check, Star } from "lucide-react";
 import { ChefImage } from "@/components/chef";
-import { ThreeDCardDemo } from "@/components/3-d-card";
 import { CourseCard } from "@/components/CourseCard";
-import { Badge } from "@/components/ui/badge";
+import { InfiniteMovingCardsDemo } from "@/components/InfiniteMovingCardsDemo";
+import { CourseCards2 } from "@/components/CourseCards2";
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from "@/components/ui/accordion"
+import { Footer } from "@/components/Footer";
 
 const montserrat = Montserrat({ subsets: ["latin"] });
 
@@ -22,9 +25,7 @@ export default function Home() {
                 <h1
                   className={
                     "relative w-fit tracking-tight text-balance font-bold !leading-tight text-white text-5xl md:text-6xl lg:text-7xl"
-                  }
-                >
-                  Become a Master Chef with Our Culinary Courses
+                  }> Become a Master Chef with Our Culinary Courses
                 </h1>
               </div>
               <div className={montserrat.className}>
@@ -53,31 +54,135 @@ export default function Home() {
           </div>
         </MaxWidthWrapper>
       </section>
+      
       <section>
-        <MaxWidthWrapper className="lg:grid lg:grid-cols-2 lg:gap-x-12 xl:gap-x-12 py-24 lg:py-0">
+        <MaxWidthWrapper className="lg:grid lg:grid-cols-1 lg:gap-x-12 xl:gap-x-12 py-24 lg:py-15">
           <div>
-            <div className="col-span px-6 lg:px-0 ">
-              <div className="relative text-center lg:text-left flex flex-col items-center my-10 lg:items-start">
+            <div className="col-span px-2 lg:px-0 ">
+              <div className="relative text-center lg:text-left flex flex-col items-center  lg:items-start">
                 <div className={montserrat.className}>
                   <h1
                     className={
                       "relative w-fit tracking-tight text-balance font-bold !leading-tight text-black text-5xl md:text-6xl lg:text-5xl"
-                    }
-                  >
-                    Explore Our Courses
+                    }>Explore Our Courses
                   </h1>
                 </div>
               </div>
             </div>
-            <div className="flex">
-              <div>
-                <CourseCard/>
+            <div className="flex lg:mb-5 my-5">
+              <div className="">
+                <CourseCard />
               </div>
               
             </div>
           </div>
         </MaxWidthWrapper>
       </section>
+
+      <section className="bg-black">
+        <MaxWidthWrapper className="lg:grid lg:grid-cols-1 lg:gap-x-12 xl:gap-x-12 py-24 lg:py-15 ">
+          <div className="">
+            <div className="col-span px-2 lg:px-0 ">
+              <div className="relative text-center lg:text-left flex flex-col items-center  lg:items-start">
+                <div className={montserrat.className}>
+                  <h1
+                    className={
+                      "relative w-fit tracking-tight text-balance font-bold !leading-tight text-white text-5xl md:text-6xl lg:text-5xl"
+                    }>What Our Students Say
+                  </h1>
+                </div>
+                <div className={montserrat.className}>
+                  <p className="mt-2 text-lg lg:pr-10 max-w-prose text-center text-white font-light lg:text-left">
+                  Hear from our satisfied students about their experiences with our culinary courses.
+                </p>
+              </div>
+              </div>
+            </div>
+            <div className="flex">
+              <div className="">
+                <InfiniteMovingCardsDemo />
+              </div>
+            </div>
+          </div>
+        </MaxWidthWrapper>
+      </section>
+
+      <section>
+        <MaxWidthWrapper className="lg:grid lg:grid-cols-1 lg:gap-x-12 xl:gap-x-12 py-24 lg:py-15">
+          <div>
+            <div className="col-span px-2 lg:px-0 ">
+              <div className="relative text-center lg:text-left flex flex-col items-center  lg:items-start">
+                <div className={montserrat.className}>
+                  <h1
+                    className={
+                      "relative w-fit tracking-tight text-balance font-bold !leading-tight text-black text-5xl md:text-6xl lg:text-5xl"
+                    }>Frequently Asked Questions
+                  </h1>
+                </div>
+                <div className={montserrat.className}>
+                  <p className="mt-2 text-lg lg:pr-10 max-w-prose text-center text-black font-light lg:text-left">
+                  Got questions about our culinary courses? Check out our FAQ section for answers.
+                </p>
+              </div>
+              </div>
+            </div>
+            <div className="lg:mx-10 my-10 justify-items-start">
+              <div className="">
+              <Accordion type="single" collapsible>
+              <AccordionItem value="item-1">
+                <AccordionTrigger>Is it accessible?</AccordionTrigger>
+                <AccordionContent>
+                  Yes. It adheres to the WAI-ARIA design pattern.
+                </AccordionContent>
+              </AccordionItem>
+            </Accordion>
+            
+            <Accordion type="single" collapsible>
+              <AccordionItem value="item-1">
+                <AccordionTrigger>Is it accessible?</AccordionTrigger>
+                <AccordionContent>
+                  Yes. It adheres to the WAI-ARIA design pattern.
+                </AccordionContent>
+              </AccordionItem>
+            </Accordion>
+            
+            <Accordion type="single" collapsible>
+              <AccordionItem value="item-1">
+                <AccordionTrigger>Is it accessible?</AccordionTrigger>
+                <AccordionContent>
+                  Yes. It adheres to the WAI-ARIA design pattern.
+                </AccordionContent>
+              </AccordionItem>
+            </Accordion>
+            
+            <Accordion type="single" collapsible>
+              <AccordionItem value="item-1">
+                <AccordionTrigger>Is it accessible?</AccordionTrigger>
+                <AccordionContent>
+                  Yes. It adheres to the WAI-ARIA design pattern.
+                </AccordionContent>
+              </AccordionItem>
+            </Accordion>
+
+              </div>
+              
+            </div>
+          </div>
+        </MaxWidthWrapper>
+      </section>
+
+
+      <section className="bg-black">
+        <MaxWidthWrapper>
+          <div className="">
+            
+                
+                <Footer/>
+              </div>
+            
+        </MaxWidthWrapper>
+      </section>
     </div>
   );
 }
+
