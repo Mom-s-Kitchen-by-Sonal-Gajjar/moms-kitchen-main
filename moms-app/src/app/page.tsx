@@ -1,9 +1,7 @@
 import { Montserrat } from "next/font/google";
 import { MaxWidthWrapper } from "@/components/MaxWidthWrapper";
-import { ChefImage } from "@/components/chef";
 import { CourseCard } from "@/components/CourseCard";
 import { InfiniteMovingCardsDemo } from "@/components/InfiniteMovingCardsDemo";
-import { CourseCards2 } from "@/components/CourseCards2";
 import {
   Accordion,
   AccordionContent,
@@ -11,12 +9,15 @@ import {
   AccordionTrigger,
 } from "@/components/ui/accordion"
 import { Footer } from "@/components/Footer";
+import { ChefImage } from "@/components/Chef";
+import { signIn, signOut, useSession } from "next-auth/react"
 
 const montserrat = Montserrat({ subsets: ["latin"] });
 
 export default function Home() {
   return (
     <div className="">
+
       <section className="bg-burgendy">
         <MaxWidthWrapper className="lg:grid lg:grid-cols-3 lg:gap-x-0 xl:gap-x-12 py-24 lg:py-0 lg:pt-32">
           <div className="col-span-2 px-6 lg:px-0 lg:pt-4">
@@ -26,8 +27,11 @@ export default function Home() {
                   className={
                     "relative w-fit tracking-tight text-balance font-bold !leading-tight text-white text-5xl md:text-6xl lg:text-7xl"
                   }> Become a Master Chef with Our Culinary Courses
+                  
                 </h1>
               </div>
+                    
+              
               <div className={montserrat.className}>
                 <p className="mt-2 text-lg lg:pr-10 max-w-prose text-center text-white font-light lg:text-left">
                   Unlock your passion for cooking and take your skills to the

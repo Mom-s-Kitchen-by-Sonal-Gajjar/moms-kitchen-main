@@ -1,5 +1,7 @@
-export const Button = ()=>{
+import { ReactNode } from "react"
+
+export const Button = ({ children }:{ children: ReactNode}) => {
     return <div>
-        <button type="button" className="focus:outline-none text-black bg-light_burgendy hover:bg-slate-200 font-medium rounded-xl text-xl px-5 py-2.5">Login</button>
+        <button className="px-4 py-2 rounded-xl border cursor-pointer border-neutral-200 text-neutral-700 bg-white hover:bg-gray-100 transition duration-200">{children}</button>
     </div>
 }

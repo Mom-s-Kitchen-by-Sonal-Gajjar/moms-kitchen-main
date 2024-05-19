@@ -1,5 +1,10 @@
+"use client"
+
 import Link from "next/link"
 import { MaxWidthWrapper } from "./MaxWidthWrapper"
+import { Button } from "./Button"
+import { SessionProvider, signIn, signOut, useSession } from "next-auth/react"
+import Component from "@/app/providers"
 
 export const Navbar = () => {
     return( 
@@ -13,6 +18,26 @@ export const Navbar = () => {
 
                 <Link href="/">Home</Link>
                 <Link href="/courses">Courses</Link>
+
+                <SessionProvider >
+                  <Component />
+                </SessionProvider>
+                    <div>
+                    
+
+                        {/* <button onClick={()=>{
+                            signIn();
+                        }} className="px-4 py-2 rounded-xl border cursor-pointer border-neutral-200 text-neutral-700 bg-white hover:bg-gray-100 transition duration-200">
+                        Signin
+                        </button> */}
+                    </div>
+                    <div>
+                        {/* <button onClick={()=>{
+                            signOut();
+                        }} className="px-4 py-2 rounded-xl border cursor-pointer border-neutral-200 text-neutral-700 bg-white hover:bg-gray-100 transition duration-200">
+                        Signout
+                        </button> */}
+                    </div>
                 
             </div>
             </div>
@@ -20,4 +45,7 @@ export const Navbar = () => {
     </nav>
     )
 }
+
+
+
 
